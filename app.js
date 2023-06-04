@@ -5,12 +5,13 @@ const connectDB = require("./db/connect");
 require("dotenv").config();
 
 // middleware
+app.use(express.static("./public"));
 app.use(express.json());
 
 // import task routes
 app.use("/api/v1/tasks", tasks);
 
-const port = 5000
+const port = 5000;
 
 const start = async () => {
   try {
